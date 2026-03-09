@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dados de Entrega</title>
+<link rel="stylesheet" href="../pag_entrega/style.css">
+
+</head>
+
+<body>
+
+<h1>📦 Informações de Entrega</h1>
+
+<div class="formulario">
+
+<input type="text" id="nome" placeholder="Nome Completo">
+
+<input type="text" id="endereco" placeholder="Endereço">
+
+<input type="text" id="cidade" placeholder="Cidade">
+
+<input type="text" id="cep" placeholder="CEP">
+
+<label>Melhor dia para entrega</label>
+<br>
+
+<input type="date" id="dataEntrega">
+
+<br><br>
+
+<button onclick="confirmarPedido()">
+Confirmar Pedido
+</button>
+
+<br>
+
+<a href="../index.html">
+<button class="btn-voltar">
+Voltar para Página Inicial
+</button>
+</a>
+
+</div>
+
+<script>
+
+// pegar data da compra
+let dataCompra = new Date(localStorage.getItem("dataCompra"))
+
+// adicionar 7 dias
+dataCompra.setDate(dataCompra.getDate() + 7)
+
+// formatar data
+let dataMinima = dataCompra.toISOString().split("T")[0]
+
+// aplicar no campo
+document.getElementById("dataEntrega").min = dataMinima
+
+
+function confirmarPedido(){
+
+alert("Pedido confirmado com sucesso! 📦")
+
+// limpar campos
+document.getElementById("nome").value = ""
+document.getElementById("endereco").value = ""
+document.getElementById("cidade").value = ""
+document.getElementById("cep").value = ""
+document.getElementById("dataEntrega").value = ""
+
+}
+
+</script>
+
+</body>
+</html>

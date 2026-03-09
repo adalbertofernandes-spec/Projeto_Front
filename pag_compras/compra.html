@@ -4,27 +4,64 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pagina de Compras</title>
-<link rel="stylesheet" href="../pag_compras/style.css">
+
+<style>
+
+body{
+font-family: Arial;
+background:#f5f5f5;
+text-align:center;
+}
+
+.compra{
+background:white;
+padding:30px;
+width:500px;
+margin:auto;
+border-radius:10px;
+box-shadow:0px 0px 10px rgba(0,0,0,0.1);
+}
+
+img{
+width:200px;
+}
+
+.preco{
+font-size:22px;
+color:green;
+font-weight:bold;
+margin:10px;
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+.btn-comprar{
+background:#28a745;
+color:white;
+font-size:16px;
+}
+
+</style>
+
 </head>
 
 <body>
 
 <h1>🛒 Realize sua compra segura</h1>
-<hr>
 
 <div class="compra">
 
-<div class="produto-compra">
-
-<img src="../assents/image/CELULAR3.png" alt="Produto">
-
-<div class="info-produto">
+<img src="../assents/image/CELULAR3.png">
 
 <h2>Samsung Galaxy G30</h2>
 
-<p class="descricao">
+<p>
 Smartphone com tela AMOLED, câmera de alta resolução e bateria de longa duração.
-Ideal para trabalho, estudo e entretenimento.
 </p>
 
 <div class="preco">
@@ -32,9 +69,14 @@ R$ 1.299,90
 </div>
 
 <label>Quantidade</label>
+<br>
 <input type="number" value="1" min="1">
 
+<br><br>
+
 <label>Forma de pagamento</label>
+<br>
+
 <select>
 <option>Cartão de Crédito</option>
 <option>Pix</option>
@@ -42,19 +84,36 @@ R$ 1.299,90
 <option>Débito</option>
 </select>
 
-<button class="btn-comprar">Finalizar Compra</button>
+<br><br>
 
-</div>
+<button class="btn-comprar" onclick="finalizarCompra()">
+Finalizar Compra
+</button>
 
-</div>
-
-<br>
+<br><br>
 
 <a href="../index.html">
-<button class="btn-profissional">Retornar ao Menu</button>
+<button>Retornar ao Menu</button>
 </a>
 
 </div>
+
+<script>
+
+function finalizarCompra(){
+
+// salva a data da compra
+let dataCompra = new Date()
+
+// salva no navegador
+localStorage.setItem("dataCompra", dataCompra)
+
+// redireciona para página de entrega
+window.location.href = "entrega.html"
+
+}
+
+</script>
 
 </body>
 </html>
