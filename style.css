@@ -12,6 +12,7 @@ h1{
     scrollbar-width: auto;
 }
 
+<<<<<<< HEAD
 .logo {
     display: flex;
     justify-content: center;
@@ -22,6 +23,13 @@ h1{
     max-width: 200px; 
     height: auto;
     
+=======
+h2{
+    color:#fff;
+    text-align:center;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+>>>>>>> c41098d7563042c38021193b1d29d391fe15e687
 }
 
 hr{
